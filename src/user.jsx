@@ -9,4 +9,6 @@ function User({ user }) {
   );
 }
 
+
 export default User;
+
