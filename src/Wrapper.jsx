@@ -21,6 +21,8 @@ export function Forms() {
   let [name, setName] = useState("");
   let [pass, setPass] = useState("");
   let [email, setEmail] = useState("");
+  let [gender, setGender] = useState("female");
+  let [city,setCity]= useState("pune");
   let [skills, setSkills] = useState([]);
   const HandleSkills = (event) => {
     if (event.target.checked) {
@@ -76,6 +78,38 @@ export function Forms() {
           <br />
           <br />
           <p> selected Skills : {skills}</p>
+          <br />
+          <br />
+          <input
+            type="radio"
+            name="gender"
+            id="male"
+            value="male"
+            onChange={(event) => setGender(event.target.value)}
+            checked={gender == "male"}
+          />
+          <label htmlFor="male"> Male</label>
+          <input
+            type="radio"
+            name="gender"
+            id="female"
+            value="female"
+            onChange={(event) => setGender(event.target.value)}
+            checked={gender == "female"}
+          />
+          <label htmlFor="female"> FeMale</label>
+          <p>Selected Gender : {gender}</p>
+          <br />
+          <br />
+         <p> Selected City : {city}</p>
+          <select name="city" id="cities" defaultChecked={city} onChange={(event)=>{ setCity(event.target.value)}}>
+            <option value="pune" oncl>Pune</option>
+            <option value="mumbai">Mumbai</option>
+            <option value="solapur">Solapur</option>
+          </select>
+          
+          <br />
+          <br />
           <button
             onClick={() => {
               setEmail(""), setName(""), setPass("");
@@ -83,9 +117,6 @@ export function Forms() {
           >
             Clear
           </button>
-          <h2> Name : {name}</h2>
-          <h2> Password : {pass}</h2>
-          <h2> Email ID : {email}</h2>
         </form>
       </center>
     </div>
