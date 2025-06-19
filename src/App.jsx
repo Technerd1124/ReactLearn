@@ -2,7 +2,7 @@ import { useState } from "react";
 import User from "./user";
 import College from "./college";
 import Student from "./Student";
-import Wrapper from "./Wrapper";
+import Wrapper, { Forms } from "./Wrapper";
 function App() {
   // const [f , setCar]= useState("BMW")
 
@@ -58,19 +58,16 @@ function App() {
 
       <button onClick={() => setName("Lily")}>Set Name</button>
       <Student name={nameof} />
-
-      
       <hr />
       <center>
         <h1> WRAPPER COMPONENTS</h1>
       </center>
       <hr />
-        <Wrapper>
-           <h2> </h2>
-      </Wrapper>
-
+      <Wrapper></Wrapper>
+      <hr />
+      <br />
+      <Forms />
     </div>
   );
 }
-
 export default App;
